@@ -8,37 +8,16 @@ const User = db.define('users',{
         allowNull: false,
         primaryKey: true
     },
-    firstName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    lastName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
+    
     userName: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
     },
     password: {
         type: Sequelize.STRING
     },
-    estadosBrasil:{
-
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-   
-    zipCode:{
-
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    checkBox:{
-
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
+    
 });
 
 //Criar a tabela

@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 app.get("/users", eAdmin, async (req, res) => {
 
     await User.findAll({
-        attributes: ['id', 'firstName', 'userName', 'password'],
+        attributes: ['id', 'userName', 'password'],
         order: [['id', 'ASC']]
     })
         .then((users) => {
@@ -164,7 +164,7 @@ app.post('/login', async (req, res) => {
 });
 
 app.get("/val-token", eAdmin, async (req, res) => {
-    await User.findByPk(req.userId, { attributes: ['id', 'name', 'email'] })
+    await User.findByPk(req.userId, { attributes: ['id', 'userName', 'password'] })
         .then((user) => {
             return res.json({
                 erro: false,
