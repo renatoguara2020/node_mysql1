@@ -8,22 +8,42 @@ const User = db.define('users',{
         allowNull: false,
         primaryKey: true
     },
-    name: {
+    firstName: {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    email: {
+    lastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    userName: {
         type: Sequelize.STRING,
         allowNull: false,
     },
     password: {
         type: Sequelize.STRING
-    }
+    },
+    estadosBrasil:{
+
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+   
+    zipCode:{
+
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    checkBox:{
+
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
 });
 
 //Criar a tabela
 //User.sync();
 //Verificar se há alguma diferença na tabela, realiza a alteração
-//User.sync({ alter: true });
+//User.sync({ force: true });
 
 module.exports = User;

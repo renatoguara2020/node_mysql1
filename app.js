@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 app.get("/users", eAdmin, async (req, res) => {
 
     await User.findAll({
-        attributes: ['id', 'name', 'email', 'password'],
-        order: [['id', 'DESC']]
+        attributes: ['id', 'firstName', 'userName', 'password'],
+        order: [['id', 'ASC']]
     })
         .then((users) => {
             return res.json({
@@ -179,6 +179,6 @@ app.get("/val-token", eAdmin, async (req, res) => {
 
 });
 
-app.listen(8080, () => {
-    console.log("Servidor iniciado na porta 8080: http://localhost:8080");
+app.listen(3000, () => {
+    console.log("Servidor iniciado na porta 3000: http://localhost:3000");
 });
